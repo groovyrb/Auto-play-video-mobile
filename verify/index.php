@@ -9,7 +9,7 @@ $subject = "HTML email";
 $message = "
 <html>
 <head>
-<title>AMINFOWEB PVT LTD</title>
+<title>Title goes here</title>
 </head>
 <body>
 <p>THIS EMAIL IS JUST FOR TESTING</p>
@@ -32,10 +32,10 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <claim@aminfoweb.com>' . "\r\n";
-$headers .= 'Cc: david@truthinit.com' . "\r\n";
+$headers .= 'From: <test@test.com>' . "\r\n";
+$headers .= 'Cc: rahul.rajoria@gmail.com' . "\r\n";
 
 mail($to,$subject,$message,$headers);
-header('Location:http://aminfoweb.com/add?sent=success');
+header('Location:your-url');
 
 ?>
