@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Auto Play</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="iphone-inline-video.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+
+
+	<div class="video-container">
+		<video autoplay="autoplay" loop="loop" muted playsinline src="movie.mp4" id='myVideo'></video>
+		<button class='play'>Play/pause</button>
+		<button class='fullscreen'>Fullscreen</button>
+	<div class="mute" onclick="document.getElementById('myVideo').muted = !document.getElementById('myVideo').muted"><a href="#">Play Sound</a>
+</div>
+		
+	</div>
+
+	<script>
+	var vid = document.getElementById("myVideo");
+
+function enableMute() { 
+    vid.muted = true;
+}
+	</script>
+
+
+	<script src="index.js"></script>
+</body>
+</html>
