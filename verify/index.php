@@ -33,7 +33,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
 $headers .= 'From: <test@test.com>' . "\r\n";
-$headers .= 'Cc: rahul.rajoria@gmail.com' . "\r\n";
+$headers .= 'Cc: rahuraj225@gmail.com' . "\r\n";
 
 mail($to,$subject,$message,$headers);
 header('Location:your-url');
